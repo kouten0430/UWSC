@@ -1,0 +1,16 @@
+IFB -1= GETID("i2i用","CabinetWClass") THEN
+	Shell=CREATEOLEOBJ("WScript.Shell")
+	Shell.Run("C:\Users\wrfmf\Pictures\i2i用")
+ENDIF
+
+REPEAT
+	ExplorerID = GETID("i2i用","CabinetWClass")
+UNTIL -1<>ExplorerID
+
+REPEAT
+	ACW(ExplorerID,0,0,222,1020)
+UNTIL _
+0=STATUS(ExplorerID,ST_X) AND _
+0=STATUS(ExplorerID,ST_Y) AND _
+222=STATUS(ExplorerID,ST_WIDTH) AND _
+1020=STATUS(ExplorerID,ST_HEIGHT)

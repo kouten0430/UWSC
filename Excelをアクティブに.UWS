@@ -1,0 +1,2 @@
+ExcelID = GETID("Excel")
+CTRLWIN( ExcelID,　ACTIVATE )

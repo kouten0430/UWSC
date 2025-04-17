@@ -1,0 +1,19 @@
+タスクバーID = GETID("","Shell_TrayWnd")
+
+X座標=STATUS(タスクバーID,ST_WIDTH)/2
+Y座標=0
+幅=STATUS(タスクバーID,ST_WIDTH)/2
+高さ=STATUS(タスクバーID,ST_Y)
+
+uwscID = GETID(GET_THISUWSC_WIN)
+CTRLWIN( uwscID,　HIDE )
+
+ExplorerID = GETID(GET_ACTIVE_WIN)
+
+REPEAT
+	ACW(ExplorerID,X座標,Y座標,幅,高さ)
+UNTIL _
+X座標=STATUS(ExplorerID,ST_X) AND _
+Y座標=STATUS(ExplorerID,ST_Y) AND _
+幅=STATUS(ExplorerID,ST_WIDTH) AND _
+高さ=STATUS(ExplorerID,ST_HEIGHT)

@@ -1,0 +1,2 @@
+EdgeID = GETID("Edge")
+CTRLWIN( EdgeID,　ACTIVATE )

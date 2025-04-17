@@ -1,0 +1,5 @@
+MeryID = GETID("Mery")
+EdgeID = GETID("Edge")
+
+ACW(MeryID,960,0,960,1020)
+ACW(EdgeID,0,0,960,1020)

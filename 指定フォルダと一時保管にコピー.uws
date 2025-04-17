@@ -1,0 +1,21 @@
+uwscID = GETID(GET_THISUWSC_WIN)
+CTRLWIN( uwscID,　HIDE )
+
+REPEAT
+	KBD(VK_SHIFT,DOWN,10)
+	KBD(VK_F10,CLICK,10)
+	KBD(VK_SHIFT,UP,10)
+
+	KBD(VK_A,CLICK,10)
+
+	SLEEP(0.5)
+
+	引数=REPLACE(GETSTR(0),"<#DBL>","")
+
+	SLEEP(0.5)
+UNTIL POS(".png",引数)>0
+
+FSO=CREATEOLEOBJ("Scripting.FileSystemObject")
+
+FSO.CopyFile(引数,"C:\Users\wrfmf\Pictures\NovelAI"+"\",False)
+FSO.CopyFile(引数,"C:\Users\wrfmf\Google ドライブ\Type8\一時保管\",False)

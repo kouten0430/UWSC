@@ -1,0 +1,4 @@
+Shell=CREATEOLEOBJ("Shell.Application")
+Shell.Explore(8)
+ExplorerID=GETID("最近使った項目","CabinetWClass")
+ACW(ExplorerID,0,0,960,1020)

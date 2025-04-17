@@ -1,0 +1,18 @@
+IFB -1= GETID("最近使った項目","CabinetWClass") THEN
+	Shell=CREATEOLEOBJ("Shell.Application")
+	Shell.Explore(8)
+ENDIF
+
+REPEAT
+	ExplorerID = GETID("最近使った項目","CabinetWClass")
+UNTIL -1<>ExplorerID
+
+REPEAT
+	ACW(ExplorerID,0,0,222,1020)
+UNTIL _
+0=STATUS(ExplorerID,ST_X) AND _
+0=STATUS(ExplorerID,ST_Y) AND _
+222=STATUS(ExplorerID,ST_WIDTH) AND _
+1020=STATUS(ExplorerID,ST_HEIGHT)
+
+CTRLWIN(ExplorerID,TOPMOST)

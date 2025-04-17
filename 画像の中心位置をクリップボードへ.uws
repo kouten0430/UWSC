@@ -1,0 +1,7 @@
+PATH=INPUT("パスを入力")
+PATH=REPLACE(PATH,"<#DBL>","")
+OBJ=CREATEOLEOBJ("WIA.ImageFile")
+OBJ.LoadFile(PATH)
+W=INT(OBJ.Width/2)
+H=INT(OBJ.Height/2)
+SENDSTR(0,"X:"+W+"<#CR>"+"Y:"+H)

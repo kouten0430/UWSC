@@ -1,0 +1,18 @@
+SHELL=CREATEOLEOBJ("Shell.Application")
+SHELL.ShellExecute("microsoft-edge:https://colab.research.google.com")
+
+REPEAT
+UNTIL CHKIMG("C:\Users\wrfmf\Documents\雑庫\uws\画像\好天アイコン.bmp")
+
+BTN(LEFT,CLICK,G_IMG_X+32,G_IMG_Y+27,100)
+BTN(LEFT,CLICK,G_IMG_X+32,G_IMG_Y+27,100)
+
+REPEAT
+UNTIL CHKIMG("C:\Users\wrfmf\Documents\雑庫\uws\画像\壊音アイコン.bmp")
+
+BTN(LEFT,CLICK,G_IMG_X+32,G_IMG_Y+29,100)
+
+REPEAT
+UNTIL CHKIMG("C:\Users\wrfmf\Documents\雑庫\uws\画像\anything.bmp")
+
+BTN(LEFT,CLICK,G_IMG_X+100,G_IMG_Y+17,100)

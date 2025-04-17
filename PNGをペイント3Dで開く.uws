@@ -1,0 +1,22 @@
+X=G_MOUSE_X
+Y=G_MOUSE_Y
+
+uwscID = GETID(GET_THISUWSC_WIN)
+CTRLWIN( uwscID,　HIDE )
+
+KBD(VK_SHIFT,DOWN,10)
+KBD(VK_F10,CLICK,10)
+KBD(VK_SHIFT,UP,10)
+
+KBD(VK_H,CLICK,10)
+
+OBJ=CREATEOLEOBJ("WIA.ImageFile")
+
+REPEAT
+UNTIL CHKIMG("C:\Users\wrfmf\Documents\雑庫\uws\画像\3D.bmp")
+OBJ.LoadFile("C:\Users\wrfmf\Documents\雑庫\uws\画像\3D.bmp")
+W=INT(OBJ.Width/2)
+H=INT(OBJ.Height/2)
+BTN(LEFT,CLICK,G_IMG_X+W,G_IMG_Y+H,100)
+
+MMV(X,Y)

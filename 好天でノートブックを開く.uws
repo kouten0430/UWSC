@@ -1,0 +1,12 @@
+SHELL=CREATEOLEOBJ("Shell.Application")
+SHELL.ShellExecute("microsoft-edge:https://colab.research.google.com")
+
+REPEAT
+UNTIL CHKIMG("C:\Users\wrfmf\Documents\雑庫\uws\画像\anything2.bmp")
+
+OBJ=CREATEOLEOBJ("WIA.ImageFile")
+OBJ.LoadFile("C:\Users\wrfmf\Documents\雑庫\uws\画像\anything2.bmp")
+W=INT(OBJ.Width/2)
+H=INT(OBJ.Height/2)
+
+BTN(LEFT,CLICK,G_IMG_X+W+100,G_IMG_Y+H,100)

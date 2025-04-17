@@ -1,0 +1,9 @@
+IFB -1= GETID("uwsc","HH Parent") THEN
+	EXEC("hh C:\Users\wrfmf\Downloads\uwsc5302\uwsc.chm")
+ENDIF
+
+MeryID = GETID("Mery")
+HelpID = GETID("uwsc","HH Parent")
+
+ACW(MeryID,960,0,960,1020)
+ACW(HelpID,0,0,960,1020)

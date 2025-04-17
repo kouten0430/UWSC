@@ -1,0 +1,15 @@
+窓ID = GETID("i2i")
+
+クラス名=STATUS(窓ID,ST_CLASS)
+X座標=STATUS(窓ID,ST_X)
+Y座標=STATUS(窓ID,ST_Y)
+幅=STATUS(窓ID,ST_WIDTH)
+高さ=STATUS(窓ID,ST_HEIGHT)
+
+MSGBOX(_
+"クラス名："+クラス名+"<#CR>"+_
+"X座標："+X座標+"<#CR>"+_
+"Y座標："+Y座標+"<#CR>"+_
+"幅："+幅+"<#CR>"+_
+"高さ："+高さ_
+)

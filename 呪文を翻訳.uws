@@ -1,0 +1,143 @@
+X=G_MOUSE_X
+Y=G_MOUSE_Y
+
+OBJ=CREATEOLEOBJ("WIA.ImageFile")
+EXCELOBJ=GETACTIVEOLEOBJ("Excel.Application")
+
+ExcelID = GETID("Excel")
+CTRLWIN( ExcelID,　ACTIVATE )
+
+//REPEAT
+//UNTIL CHKIMG("C:\Users\wrfmf\Documents\雑庫\uws\画像\転送.bmp")
+//OBJ.LoadFile("C:\Users\wrfmf\Documents\雑庫\uws\画像\転送.bmp")
+//W=INT(OBJ.Width/2)
+//H=INT(OBJ.Height/2)
+//BTN(LEFT,CLICK,G_IMG_X+W,G_IMG_Y+H,100)
+EXCELOBJ.Run("呪文用.xlsm!Sheet1.UWSC用の陽性呪文の転送")
+
+SLEEP(0.01)
+
+EdgeID = GETID("Edge")
+CTRLWIN( EdgeID,　ACTIVATE )
+
+IFB CHKIMG("C:\Users\wrfmf\Documents\雑庫\uws\画像\翻訳白.bmp") THEN
+
+	IFB CHKIMG("C:\Users\wrfmf\Documents\雑庫\uws\画像\日本語.bmp") THEN
+		OBJ.LoadFile("C:\Users\wrfmf\Documents\雑庫\uws\画像\日本語.bmp")
+		W=INT(OBJ.Width/2)
+		H=INT(OBJ.Height/2)
+		BTN(LEFT,CLICK,G_IMG_X+W+125,G_IMG_Y+H,100)
+		//CHKIMG("C:\Users\wrfmf\Documents\雑庫\uws\画像\再読込.bmp")
+		//OBJ.LoadFile("C:\Users\wrfmf\Documents\雑庫\uws\画像\再読込.bmp")
+		//W=INT(OBJ.Width/2)
+		//H=INT(OBJ.Height/2)
+		//BTN(LEFT,CLICK,G_IMG_X+W,G_IMG_Y+H,100)
+		SLEEP(1)
+	ENDIF
+
+	IFB CHKIMG("C:\Users\wrfmf\Documents\雑庫\uws\画像\翻訳バツ.bmp") THEN
+		OBJ.LoadFile("C:\Users\wrfmf\Documents\雑庫\uws\画像\翻訳バツ.bmp")
+		W=INT(OBJ.Width/2)
+		H=INT(OBJ.Height/2)
+		BTN(LEFT,CLICK,G_IMG_X+W,G_IMG_Y+H,100)
+	ELSE
+		CHKIMG("C:\Users\wrfmf\Documents\雑庫\uws\画像\翻訳マイク.bmp")
+		OBJ.LoadFile("C:\Users\wrfmf\Documents\雑庫\uws\画像\翻訳マイク.bmp")
+		W=INT(OBJ.Width/2)
+		H=INT(OBJ.Height/2)
+		BTN(LEFT,CLICK,G_IMG_X+W,G_IMG_Y-100,100)
+	ENDIF
+	
+	IFB CHKIMG("C:\Users\wrfmf\Documents\雑庫\uws\画像\英語.bmp") THEN
+		OBJ.LoadFile("C:\Users\wrfmf\Documents\雑庫\uws\画像\英語.bmp")
+		W=INT(OBJ.Width/2)
+		H=INT(OBJ.Height/2)
+		BTN(LEFT,CLICK,G_IMG_X+W+30,G_IMG_Y+H,100)	
+	ENDIF
+	
+	KBD(VK_CTRL,DOWN,500)
+	KBD(VK_V,CLICK,10)
+	KBD(VK_CTRL,UP,10)
+	
+	REPEAT
+	UNTIL CHKIMG("C:\Users\wrfmf\Documents\雑庫\uws\画像\翻訳コピー.bmp")
+	OBJ.LoadFile("C:\Users\wrfmf\Documents\雑庫\uws\画像\翻訳コピー.bmp")
+	W=INT(OBJ.Width/2)
+	H=INT(OBJ.Height/2)
+	BTN(LEFT,CLICK,G_IMG_X+W,G_IMG_Y+H,100)
+	
+	CTRLWIN( ExcelID,　ACTIVATE )
+	
+	//REPEAT
+	//UNTIL CHKIMG("C:\Users\wrfmf\Documents\雑庫\uws\画像\読込.bmp")
+	//OBJ.LoadFile("C:\Users\wrfmf\Documents\雑庫\uws\画像\読込.bmp")
+	//W=INT(OBJ.Width/2)
+	//H=INT(OBJ.Height/2)
+	//BTN(LEFT,DOWN,G_IMG_X+W,G_IMG_Y+H,100)
+	//BTN(LEFT,UP,G_IMG_X+W,G_IMG_Y+H,100)
+	EXCELOBJ.Run("呪文用.xlsm!Sheet1.翻訳側へ貼付け")
+ELSEIF CHKIMG("C:\Users\wrfmf\Documents\雑庫\uws\画像\翻訳灰.bmp") THEN
+	OBJ.LoadFile("C:\Users\wrfmf\Documents\雑庫\uws\画像\翻訳灰.bmp")
+	W=INT(OBJ.Width/2)
+	H=INT(OBJ.Height/2)
+	BTN(LEFT,CLICK,G_IMG_X+W,G_IMG_Y+H,100)
+	
+	SLEEP(0.15)
+	
+	IFB CHKIMG("C:\Users\wrfmf\Documents\雑庫\uws\画像\日本語.bmp") THEN
+		OBJ.LoadFile("C:\Users\wrfmf\Documents\雑庫\uws\画像\日本語.bmp")
+		W=INT(OBJ.Width/2)
+		H=INT(OBJ.Height/2)
+		BTN(LEFT,CLICK,G_IMG_X+W+125,G_IMG_Y+H,100)
+		//CHKIMG("C:\Users\wrfmf\Documents\雑庫\uws\画像\再読込.bmp")
+		//OBJ.LoadFile("C:\Users\wrfmf\Documents\雑庫\uws\画像\再読込.bmp")
+		//W=INT(OBJ.Width/2)
+		//H=INT(OBJ.Height/2)
+		//BTN(LEFT,CLICK,G_IMG_X+W,G_IMG_Y+H,100)
+		SLEEP(1)
+	ENDIF
+
+	IFB CHKIMG("C:\Users\wrfmf\Documents\雑庫\uws\画像\翻訳バツ.bmp") THEN
+		OBJ.LoadFile("C:\Users\wrfmf\Documents\雑庫\uws\画像\翻訳バツ.bmp")
+		W=INT(OBJ.Width/2)
+		H=INT(OBJ.Height/2)
+		BTN(LEFT,CLICK,G_IMG_X+W,G_IMG_Y+H,100)
+	ELSE
+		CHKIMG("C:\Users\wrfmf\Documents\雑庫\uws\画像\翻訳マイク.bmp")
+		OBJ.LoadFile("C:\Users\wrfmf\Documents\雑庫\uws\画像\翻訳マイク.bmp")
+		W=INT(OBJ.Width/2)
+		H=INT(OBJ.Height/2)
+		BTN(LEFT,CLICK,G_IMG_X+W,G_IMG_Y-100,100)
+	ENDIF
+	
+	IFB CHKIMG("C:\Users\wrfmf\Documents\雑庫\uws\画像\英語.bmp") THEN
+		OBJ.LoadFile("C:\Users\wrfmf\Documents\雑庫\uws\画像\英語.bmp")
+		W=INT(OBJ.Width/2)
+		H=INT(OBJ.Height/2)
+		BTN(LEFT,CLICK,G_IMG_X+W+30,G_IMG_Y+H,100)	
+	ENDIF
+	
+	KBD(VK_CTRL,DOWN,500)
+	KBD(VK_V,CLICK,10)
+	KBD(VK_CTRL,UP,10)
+	
+	REPEAT
+	UNTIL CHKIMG("C:\Users\wrfmf\Documents\雑庫\uws\画像\翻訳コピー.bmp")
+	OBJ.LoadFile("C:\Users\wrfmf\Documents\雑庫\uws\画像\翻訳コピー.bmp")
+	W=INT(OBJ.Width/2)
+	H=INT(OBJ.Height/2)
+	BTN(LEFT,CLICK,G_IMG_X+W,G_IMG_Y+H,100)
+	
+	CTRLWIN( ExcelID,　ACTIVATE )
+	
+	//REPEAT
+	//UNTIL CHKIMG("C:\Users\wrfmf\Documents\雑庫\uws\画像\読込.bmp")
+	//OBJ.LoadFile("C:\Users\wrfmf\Documents\雑庫\uws\画像\読込.bmp")
+	//W=INT(OBJ.Width/2)
+	//H=INT(OBJ.Height/2)
+	//BTN(LEFT,DOWN,G_IMG_X+W,G_IMG_Y+H,100)
+	//BTN(LEFT,UP,G_IMG_X+W,G_IMG_Y+H,100)
+	EXCELOBJ.Run("呪文用.xlsm!Sheet1.翻訳側へ貼付け")
+ENDIF
+
+MMV(X,Y)

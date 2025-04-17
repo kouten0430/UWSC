@@ -1,0 +1,8 @@
+uwscID = GETID(GET_THISUWSC_WIN)
+CTRLWIN( uwscID,　HIDE )
+
+ExplorerID = GETID(GET_ACTIVE_WIN)
+
+位置=GETSLIDER(ExplorerID)
+
+SENDSTR(0,位置)

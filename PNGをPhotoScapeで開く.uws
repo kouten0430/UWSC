@@ -1,0 +1,18 @@
+uwscID = GETID(GET_THISUWSC_WIN)
+CTRLWIN( uwscID,　HIDE )
+
+REPEAT
+	KBD(VK_SHIFT,DOWN,10)
+	KBD(VK_F10,CLICK,10)
+	KBD(VK_SHIFT,UP,10)
+
+	KBD(VK_A,CLICK,10)
+
+	SLEEP(0.5)
+
+	引数=REPLACE(GETSTR(0),"<#DBL>","")
+
+	SLEEP(0.5)
+UNTIL POS(".png",引数)>0
+
+EXEC("<#DBL>C:\Users\wrfmf\Downloads\Portable PhotoScape\Portable PhotoScape\PhotoScape.exe<#DBL> "+"<#DBL>"+引数+"<#DBL>")
