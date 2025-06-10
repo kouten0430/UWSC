@@ -17,5 +17,5 @@ UNTIL POS(".png",引数)>0
 
 FSO=CREATEOLEOBJ("Scripting.FileSystemObject")
 
-FSO.CopyFile(引数,"C:\Users\wrfmf\Pictures\cocoIllustriousXL_v60"+"\",False)
+FSO.CopyFile(引数,"C:\Users\wrfmf\Pictures\boleromixIllustrious_v281"+"\",False)
 FSO.CopyFile(引数,"C:\Users\wrfmf\Google ドライブ\Type8\一時保管\",False)
