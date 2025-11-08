@@ -1,0 +1,24 @@
+// Z-orderで最前面のウィンドウをアクティブ化
+KBD(VK_ALT,DOWN)
+KBD(VK_ESC,CLICK)
+KBD(VK_ALT,UP)
+
+// 現在アクティブなウィンドウのIDを取得
+アクティブ窓ID = GETID(GET_ACTIVE_WIN)
+
+// ウィンドウの位置・サイズ情報を取得
+X座標=STATUS(アクティブ窓ID,ST_X)
+Y座標=STATUS(アクティブ窓ID,ST_Y)
+幅=STATUS(アクティブ窓ID,ST_WIDTH)
+高さ=STATUS(アクティブ窓ID,ST_HEIGHT)
+
+// 取得した情報をメッセージボックスで表示
+MSGBOX(_
+"X座標："+X座標+"<#CR>"+_
+"Y座標："+Y座標+"<#CR>"+_
+"幅   ："+幅+"<#CR>"+_
+"高さ ："+高さ_
+)
+
+// 座標とサイズを「X,Y,幅,高さ」の形式でクリップボードにコピー
+SENDSTR(0, X座標+","+Y座標+","+幅+","+高さ)

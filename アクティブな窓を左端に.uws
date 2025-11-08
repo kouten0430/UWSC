@@ -1,0 +1,25 @@
+// タスクバーのウィンドウIDを取得
+タスクバーID = GETID("","Shell_TrayWnd")
+
+// ウィンドウの位置・サイズを設定
+// 幅=0を指定するとウィンドウの最小幅に設定される
+X座標=0
+Y座標=0
+幅=0
+高さ=STATUS(タスクバーID,ST_Y)
+
+// Z-orderで最前面のウィンドウをアクティブ化
+KBD(VK_ALT,DOWN)
+KBD(VK_ESC,CLICK)
+KBD(VK_ALT,UP)
+
+// アクティブになったウィンドウのIDを取得
+アクティブ窓ID = GETID(GET_ACTIVE_WIN)
+
+// ウィンドウが設定された位置・サイズになるまで繰り返し
+REPEAT
+	ACW(アクティブ窓ID,X座標,Y座標,幅,高さ)
+UNTIL _
+X座標=STATUS(アクティブ窓ID,ST_X) AND _
+Y座標=STATUS(アクティブ窓ID,ST_Y) AND _
+高さ=STATUS(アクティブ窓ID,ST_HEIGHT)
