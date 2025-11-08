@@ -1,5 +1,0 @@
-ExplorerID = GETID("i2i用","CabinetWClass")
-
-CTRLWIN(ExplorerID,ACTIVATE)
-
-KBD(VK_F5,CLICK)
