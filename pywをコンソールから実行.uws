@@ -3,8 +3,10 @@ KBD(VK_ALT,DOWN)
 KBD(VK_ESC,CLICK)
 KBD(VK_ALT,UP)
 
+// クリップボード初期化
 SENDSTR(0,"ダミー")
 
+// コンテキストメニューからファイルパス取得
 REPEAT
 	KBD(VK_SHIFT,DOWN,10)
 	KBD(VK_F10,CLICK,10)
@@ -16,11 +18,18 @@ REPEAT
 
 UNTIL POS(".pyw",GETSTR(0))>0
 
-EXEC("cmd.exe")
+// ファイルパスからディレクトリ抽出
+FSO=CREATEOLEOBJ("Scripting.FileSystemObject")
+DIRPATH=FSO.GetParentFolderName(GETSTR(0))
 
+// cmd 起動 & ディレクトリ移動
+EXEC("cmd.exe /k cd "+"<#DBL>"+DIRPATH+"<#DBL>")
+
+// cmd ウィンドウ出現まで待機
 REPEAT
 UNTIL CHKIMG("C:\Users\wrfmf\Documents\雑庫\uws\画像\cmd.bmp")
 
+// python 実行コマンド入力
 SHELL=CREATEOLEOBJ("WScript.Shell")
 SHELL.SendKeys("python ")
 KBD(VK_CTRL,DOWN,10)
