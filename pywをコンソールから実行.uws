@@ -1,0 +1,29 @@
+// Z-orderで最前面のウィンドウをアクティブ化
+KBD(VK_ALT,DOWN)
+KBD(VK_ESC,CLICK)
+KBD(VK_ALT,UP)
+
+SENDSTR(0,"ダミー")
+
+REPEAT
+	KBD(VK_SHIFT,DOWN,10)
+	KBD(VK_F10,CLICK,10)
+	KBD(VK_SHIFT,UP,10)
+
+	KBD(VK_A,CLICK,10)
+
+	SLEEP(0.5)
+
+UNTIL POS(".pyw",GETSTR(0))>0
+
+EXEC("cmd.exe")
+
+REPEAT
+UNTIL CHKIMG("C:\Users\wrfmf\Documents\雑庫\uws\画像\cmd.bmp")
+
+SHELL=CREATEOLEOBJ("WScript.Shell")
+SHELL.SendKeys("python ")
+KBD(VK_CTRL,DOWN,10)
+KBD(VK_V,CLICK,10)
+KBD(VK_CTRL,UP,10)
+KBD(VK_RETURN,CLICK,10)
